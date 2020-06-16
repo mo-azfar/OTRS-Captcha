@@ -9,10 +9,11 @@
 	
 
 1. create and configure captcha V2 https://www.google.com/recaptcha/admin  
-2. Install Captcha::reCAPTCHA::V2 via cpan  
-3. Update Site Key at Admin > System Configuration > GoogleCaptcha::SiteKey  
-4. Update Secret Key at Admin > System Configuration > GoogleCaptcha::SecretKey  
-5. Manually update $OTRS_HOME/var/httpd/htdocs/skins/Customer/default/css/Core.Login.css  
+2. Install Captcha::reCAPTCHA::V2 via cpan 
+3. Enabled Captcha module at Admin > System Configuration > GoogleCaptcha::CustomerPortalSignUpEnabled  
+4. Update Site Key at Admin > System Configuration > GoogleCaptcha::SiteKey  
+5. Update Secret Key at Admin > System Configuration > GoogleCaptcha::SecretKey  
+6. Manually update $OTRS_HOME/var/httpd/htdocs/skins/Customer/default/css/Core.Login.css 
 
 	Increase height for example 400px for #Slider and #PreLogin. Play around with the css to suit your need.
 		

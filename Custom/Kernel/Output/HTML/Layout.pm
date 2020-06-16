@@ -3995,12 +3995,14 @@ sub CustomerLogin {
             )
 
         {
-            
             #begin recaptcha
-            my $SiteKey = $ConfigObject->Get('GoogleCaptcha::SiteKey');		
-            my $rc = Captcha::reCAPTCHA::V2->new;
-            $Param{reCAPTCHA} = $rc->html($SiteKey, { theme => 'dark' }, { size => 'compact' }, { type => 'image' }); #public key
-            #end recaptcha
+            if ($ConfigObject->Get('GoogleCaptcha::CustomerPortalSignUpEnabled'))
+            {
+                my $SiteKey = $ConfigObject->Get('GoogleCaptcha::SiteKey');		
+                my $rc = Captcha::reCAPTCHA::V2->new;
+                $Param{reCAPTCHA} = $rc->html($SiteKey, { theme => 'dark' }, { size => 'compact' }, { type => 'image' }); #public key
+            }    
+            #end recaptcha 
             
             $Self->Block(
                 Name => 'CreateAccountLink',

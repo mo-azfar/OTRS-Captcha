@@ -767,36 +767,40 @@ sub Run {
         if ( !$GetParams{UserLogin} ) {
             $GetParams{UserLogin} = $GetParams{UserEmail};
         }
-    
-        # check reCAPTCHA
-        my $rc = Captcha::reCAPTCHA::V2->new;
-        my $SecretKey = $ConfigObject->Get('GoogleCaptcha::SecretKey');		
-        my $response = $ParamObject->GetParam(Param => 'g-recaptcha-response') || '';
-		my $result = $rc->verify($SecretKey, $response);
-
-        if ( !$result->{success} ) 
+        
+        # begin recaptcha
+        if ($ConfigObject->Get('GoogleCaptcha::CustomerPortalSignUpEnabled'))
         {
-			#my $c_error = $result->{error_codes}->[0];
-             # show need user data error message
-            # send data to JS
-            $LayoutObject->AddJSData(
-                Key   => 'SignupError',
-                Value => 1,
-            );
             
-            $LayoutObject->Print(
-                Output => \$LayoutObject->CustomerLogin(
-                    Title   => 'Login',
-                    Message => Translatable(
-                        'reCAPTCHA entry failed. Please try again.'
+            my $rc = Captcha::reCAPTCHA::V2->new;
+            my $SecretKey = $ConfigObject->Get('GoogleCaptcha::SecretKey');		
+            my $response = $ParamObject->GetParam(Param => 'g-recaptcha-response') || '';
+            my $result = $rc->verify($SecretKey, $response);
+    
+            if ( !$result->{success} ) 
+            {
+                #my $c_error = $result->{error_codes}->[0];
+                # show need user data error message
+                # send data to JS
+                $LayoutObject->AddJSData(
+                    Key   => 'SignupError',
+                    Value => 1,
+                );
+                
+                $LayoutObject->Print(
+                    Output => \$LayoutObject->CustomerLogin(
+                        Title   => 'Login',
+                        Message => Translatable(
+                            'reCAPTCHA entry failed. Please try again.'
+                        ),
+                        UserTitle     => $GetParams{UserTitle},
+                        UserFirstname => $GetParams{UserFirstname},
+                        UserLastname  => $GetParams{UserLastname},
+                        UserEmail     => $GetParams{UserEmail},
                     ),
-                    UserTitle     => $GetParams{UserTitle},
-                    UserFirstname => $GetParams{UserFirstname},
-                    UserLastname  => $GetParams{UserLastname},
-                    UserEmail     => $GetParams{UserEmail},
-                ),
-            );
-            return;
+                );
+                return;
+            }
         }
         #end recaptcha
         
