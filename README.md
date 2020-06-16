@@ -1,7 +1,12 @@
 # OTRS-Goole-reCaptcha-for-Sign-Up-Form
 - For OTRS CE v6.0
 - Google reCaptcha at OTRS customer portal (sign-up form)		
-- Modification files (based on OTRS 6.0.19) has been tag with [#begin recaptcha  CODE	#end recaptcha]	
+- Modification files (based on OTRS 6.0.19) has been tag with :
+
+	#begin recaptcha  
+	CODE	
+	#end recaptcha  
+	
 
 1. create and configure captcha V2 https://www.google.com/recaptcha/admin  
 2. Install Captcha::reCAPTCHA::V2 via cpan  
