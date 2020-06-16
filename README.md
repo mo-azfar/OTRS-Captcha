@@ -4,7 +4,7 @@
 - Modification files (based on OTRS 6.0.19) has been tag with :
 
 	#begin recaptcha  
-	CODE	
+	CODE  
 	#end recaptcha  
 	
 
