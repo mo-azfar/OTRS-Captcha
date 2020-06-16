@@ -12,8 +12,12 @@
 2. Install Captcha::reCAPTCHA::V2 via cpan  
 3. Update Site Key at Admin > System Configuration > GoogleCaptcha::SiteKey  
 4. Update Secret Key at Admin > System Configuration > GoogleCaptcha::SecretKey  
+5. Manually update $OTRS_HOME/var/httpd/htdocs/skins/Customer/default/css/Core.Login.css  
 
+	Increase height for example 400px for #Slider and #PreLogin. Play around with the css to suit your need.
+		
 
+	
 Simulation: Signup without completing captcha    
 [![captcha1.png](https://i.postimg.cc/ZKYQ4NkF/captcha1.png)](https://postimg.cc/QVPmqHdH)  
 
