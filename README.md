@@ -11,7 +11,7 @@
 - Modification has been tag with [#begin recaptcha  CODE	#end recaptcha]	
 
 
-Signup without completing captcha
-[![captcha1.png](https://i.postimg.cc/ZKYQ4NkF/captcha1.png)](https://postimg.cc/QVPmqHdH)
+Signup without completing captcha  
+[![captcha1.png](https://i.postimg.cc/ZKYQ4NkF/captcha1.png)](https://postimg.cc/QVPmqHdH)  
 
-[![captcha2.png](https://i.postimg.cc/jSLkJrSD/captcha2.png)](https://postimg.cc/3kQZPVph)
+[![captcha2.png](https://i.postimg.cc/jSLkJrSD/captcha2.png)](https://postimg.cc/3kQZPVph)  
