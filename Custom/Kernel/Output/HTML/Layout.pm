@@ -4000,10 +4000,6 @@ sub CustomerLogin {
             my $SiteKey = $ConfigObject->Get('GoogleCaptcha::SiteKey');		
             my $rc = Captcha::reCAPTCHA::V2->new;
             $Param{reCAPTCHA} = $rc->html($SiteKey, { theme => 'dark' }, { size => 'compact' }, { type => 'image' }); #public key
-            $Self->Block(
-                Name => 'Captcha',
-                Data => \%Param,
-            );
             #end recaptcha
             
             $Self->Block(

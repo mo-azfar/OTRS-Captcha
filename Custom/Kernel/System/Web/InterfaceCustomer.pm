@@ -769,7 +769,6 @@ sub Run {
         }
     
         # check reCAPTCHA
-        #my $LayoutObject = $Kernel::OM->Get('Kernel::Output::HTML::Layout');
         my $rc = Captcha::reCAPTCHA::V2->new;
         my $SecretKey = $ConfigObject->Get('GoogleCaptcha::SecretKey');		
         my $response = $ParamObject->GetParam(Param => 'g-recaptcha-response') || '';
