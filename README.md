@@ -1,4 +1,4 @@
-# OTRS-Goole-reCaptcha-for-Sign-Up-Form
+# OTRS-Google-Captcha-for-Sign-Up-Form
 - For OTRS CE v6.0
 - Google reCaptcha at OTRS customer portal (sign-up form)		
 - Modification files (based on OTRS 6.0.19) has been tag with :
